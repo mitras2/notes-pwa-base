@@ -1,0 +1,194 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body, div, main {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Nunito;
+  src: url("/font/Nunito-VariableFont.ttf");
+}
+
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/font/Material-Symbols-Outlined-reg.woff") format("woff");
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+:root {
+  --color-primary: #d4b426;
+  --color-secondary: #9d5fca;
+  --color-error: #c03232;
+  --color-success: #4fa448;
+
+  --space-xs: 0.2rem;
+  --space-sm: 0.4rem;
+  --space-md: 0.6rem;
+  --space-lg: 0.8rem;
+  --space-xl: 1.2rem;
+}
+
+
+/* Default colors */
+body {
+  --color-background-rgb: 244, 244, 244;
+    --color-text-rgb: 18, 18, 18;
+    --color-accent-light-rgb: 255, 255, 255;
+    --color-accent-dark-rgb: 197, 196, 193;
+}
+/* Dark theme colors */
+body.dark-theme {
+  --color-background-rgb: 30, 30, 30;
+  --color-text-rgb: 220, 220, 220;
+  --color-accent-light-rgb: 91, 91, 91;
+  --color-accent-dark-rgb: 07, 07, 07;
+}
+
+/* Styles for users who prefer dark mode at the OS level */
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --color-background-rgb: 30, 30, 30;
+    --color-text-rgb: 220, 220, 220;
+    --color-accent-light-rgb: 91, 91, 91;
+    --color-accent-dark-rgb: 07, 07, 07;
+  }
+  /* Override dark mode with light mode styles if the user decides to swap */
+  body.light-theme {
+    --color-background-rgb: 244, 244, 244;
+    --color-text-rgb: 18, 18, 18;
+    --color-accent-light-rgb: 255, 255, 255;
+    --color-accent-dark-rgb: 197, 196, 193;
+  }
+}
+
+body {
+  --color-background: rgb(var(--color-background-rgb));
+  --color-text: rgb(var(--color-text-rgb));
+  --color-accent-light: rgb(var(--color-accent-light-rgb));
+  --color-accent-dark: rgb(var(--color-accent-dark-rgb));
+
+  background: var(--color-background);
+  color: var(--color-text);
+
+  input, textarea {
+    background-color: var(--color-accent-light);
+    border: 0;
+  }
+
+  input, textarea, :focus-visible {
+    outline: 0;
+  }
+}
+
+body {
+  font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  caret-color: var(--color-primary);
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.secondary {
+  color: var(--color-secondary);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.error {
+  color: var(--color-error);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.toRight {
+ margin-left: auto;
+}
+
+.textButton {
+  font-size: 120%;
+  cursor: pointer;
+}
+
+.start_page {
+  padding: var(--space-lg);
+
+  h1 {
+    text-align: center;
+  }
+
+  .create_note {
+
+    label span {
+      float: right;
+      margin-bottom: var(--space-md);
+    }
+
+    textarea {
+      width: 100%;
+      margin-bottom: var(--space-lg);
+    }
+  }
+}
+
+.page_note {
+  min-height: 105vh;
+  padding: var(--space-sm);
+}
+
+.headerBar {
+  height: 2.8rem;;
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: var(--space-sm);
+    height: 2.8rem;
+    background-color: rgba(var(--color-accent-light-rgb), 44%);
+    border-bottom: 0.5px var(--color-accent-dark) solid;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    .left {
+      color: var(--color-primary);
+    }
+  }
+}
